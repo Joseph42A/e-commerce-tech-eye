@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import FrontPage from "pages/FrontPage";
+import Fallback from "components/Fallback";
+import { Routes, Route } from "react-router";
+import AnotherPage from "pages/AnotherPage";
 
 function App() {
-  return (
+  const [appIsShowing, setAppIsShowing] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(function () {
+      setAppIsShowing(true);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return appIsShowing ? (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<FrontPage />} />
+        <Route path="/products/*" element={<AnotherPage />} />
+      </Routes>
     </div>
+  ) : (
+    <Fallback />
   );
 }
 
