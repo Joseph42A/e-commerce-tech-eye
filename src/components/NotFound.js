@@ -12,7 +12,7 @@ function NotFoundPage() {
         <p className="text-gray-600 text-sm leading-relaxed mb-4">
           The page you are looking for could not be found.
         </p>
-        <Link to="/" className="btn btn-blue">
+        <Link to="/" className="btn btn-blue underline">
           Go Home
         </Link>
       </div>

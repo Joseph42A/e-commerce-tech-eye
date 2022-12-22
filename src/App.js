@@ -3,6 +3,7 @@ import FrontPage from "pages/FrontPage";
 import Fallback from "components/Fallback";
 import { Routes, Route } from "react-router";
 import AnotherPage from "pages/AnotherPage";
+import NotFoundPage from "components/NotFound";
 
 function App() {
   const [appIsShowing, setAppIsShowing] = useState(false);
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<FrontPage />} />
         <Route path="/products/*" element={<AnotherPage />} />
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
     </div>
   ) : (

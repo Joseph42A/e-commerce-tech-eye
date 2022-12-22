@@ -11,7 +11,6 @@ const AnotherPage = () => {
       <Route path="/:level1" element={<Level1 />} />
       <Route path="/:level1/:level2" element={<Level2 />} />
       <Route path="/:level1/:level2/:level3" element={<Level3 />} />
-      <Route path="/test" element={<NotFoundPage />} />
     </Routes>
   );
 };
@@ -21,7 +20,7 @@ const Level1 = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (!isCorrectUrl(level1)) {
-      navigate("/products/test");
+      navigate("/notfound");
     }
   }, [level1]);
 
