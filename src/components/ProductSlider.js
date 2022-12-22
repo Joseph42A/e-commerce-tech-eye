@@ -29,7 +29,6 @@ const ProductSlider = () => {
   }, []);
 
   useEffect(() => {
-    // if (width > RESPONSIVE_SCREEN) setSlidePerView(3);
     if (width < RESPONSIVE_SCREEN && width > xsm) setSlidePerView(4);
     if (width < RESPONSIVE_SCREEN && width <= xsm) setSlidePerView(3);
   }, [width]);

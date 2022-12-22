@@ -1,11 +1,7 @@
 import React from "react";
-import LazyLoadImage from "react-lazy-load-image-component";
-// import { encode } from "blurhash";
 import EmptyImg from "assets/images/emptyImg.jpg";
 
 const CustomImage = ({ src, name, ...rest }) => {
-  // const placeholder = encode(src, 200, 200);
-
   return (
     <img
       loading="lazy"

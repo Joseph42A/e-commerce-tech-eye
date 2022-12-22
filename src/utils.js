@@ -14,4 +14,10 @@ const isCorrectUrl = (url) => {
   return typeof url === "string" && Number.isInteger(parseInt(url));
 };
 
-export { lazyLoaderWithDealy, isCorrectUrl };
+const priceAfterDiscount = (originalPrice, discountPercentage) => {
+  let discountAmount = originalPrice * (+discountPercentage / 100);
+  let priceAfterDiscount = originalPrice - discountAmount;
+  return priceAfterDiscount.toFixed(2);
+};
+
+export { lazyLoaderWithDealy, isCorrectUrl, priceAfterDiscount };
